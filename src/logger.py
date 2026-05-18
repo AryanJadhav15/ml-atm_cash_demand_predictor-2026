@@ -2,9 +2,11 @@ import os
 import logging
 from datetime import datetime
 
-LOG_FILE_NAME = f"{datetime.now().strftime("%d_%m_%Y_%H_%M_%S")}.log"
+LOG_DIR = "logs"
+LOG_FILE_NAME = f"{datetime.now().strftime('%d_%m_%Y_%H_%M_%S')}.log"
 
-log_file_path = os.path.join("logs", LOG_FILE_NAME)
+os.makedirs(LOG_DIR, exist_ok=True)
+log_file_path = os.path.join(LOG_DIR, LOG_FILE_NAME)
 
 logging.basicConfig(
     filename=log_file_path,

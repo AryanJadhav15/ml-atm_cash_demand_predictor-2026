@@ -1,5 +1,9 @@
+from src.pipelines.train_pipeline import TrainPipeline
+
+
 def main():
-    print("Hello from atm-cash-demand-predictor!")
+    metrics = TrainPipeline().run()
+    print(f"Training completed. Metrics: {metrics}")
 
 
 if __name__ == "__main__":

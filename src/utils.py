@@ -1,6 +1,8 @@
 import os
 import sys
+import json
 
+import joblib
 import pandas as pd
 
 from src.logger import logging
@@ -16,4 +18,23 @@ def read_csv_data():
         return df
     except Exception as e:
         logging.info("Error Occured")
+        raise CustomException(e, sys)
+
+
+def save_object(file_path, obj):
+    try:
+        os.makedirs(os.path.dirname(file_path), exist_ok=True)
+        joblib.dump(obj, file_path)
+    except Exception as e:
+        logging.info("Error Occured while saving object")
+        raise CustomException(e, sys)
+
+
+def save_json(file_path, data):
+    try:
+        os.makedirs(os.path.dirname(file_path), exist_ok=True)
+        with open(file_path, "w", encoding="utf-8") as file:
+            json.dump(data, file, indent=2)
+    except Exception as e:
+        logging.info("Error Occured while saving json")
         raise CustomException(e, sys)
