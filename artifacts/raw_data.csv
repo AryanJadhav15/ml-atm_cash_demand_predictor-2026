@@ -1,7 +1,7 @@
 atmId,atmName,atmCity,atmAddress,totalBalance,numberIncomeTransaction,numberOutcomeTransaction,totalIncome,totalOutcome,totalNumberTransaction,day,transactionTime
 atm350000,ali̇ağa bağli şb,izmir,aliağa petkim tesisleri,40000,0,0,0,0,0,wednesday,2020-01-01 00:00:00
 atm350001,ali̇ağa i̇sti̇klal caddesi̇,izmir,atatürk i̇sti̇klal cd. no:97,40000,0,0,0,0,0,wednesday,2020-01-01 00:00:00
-atm3500010,agora avm/balçova,izmir,mi̇thatpaşa cad.no:1448/a balçova,40000,0,0,0,0,0,wednesday,2020-01-01 00:00:00
+atm3500010,agora avm/balçova,izmir,mi̇thatpaşa cad.no:1448/a balçova,,0,0,0,0,0,wednesday,2020-01-01 00:00:00
 atm3500011,ata caddesi̇/i̇zmi̇r,izmir,ata cad.beledi̇ye ci̇vari,40000,0,0,0,0,0,wednesday,2020-01-01 00:00:00
 atm3500012,balçova novada-1,izmir,aydin çeşme otoyolu li̇montepe mevki̇i̇ petrol ofi̇si̇,40000,0,0,0,0,0,wednesday,2020-01-01 00:00:00
 atm3500013,balçova sakarya caddesi̇,izmir,fevzi̇ çakmak mh.sakarya cd.no:58/b,40000,0,0,0,0,0,wednesday,2020-01-01 00:00:00
