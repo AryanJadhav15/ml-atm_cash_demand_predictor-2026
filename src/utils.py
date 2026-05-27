@@ -30,6 +30,14 @@ def save_object(file_path, obj):
         raise CustomException(e, sys)
 
 
+def load_object(file_path):
+    try:
+        return joblib.load(file_path)
+    except Exception as e:
+        logging.info("Error Occured while loading object")
+        raise CustomException(e, sys)
+
+
 def save_json(file_path, data):
     try:
         os.makedirs(os.path.dirname(file_path), exist_ok=True)
