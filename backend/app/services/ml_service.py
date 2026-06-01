@@ -115,6 +115,16 @@ class ATMIntelligenceService:
         )
         return result
 
+    def get_filters(self):
+        cities = sorted(self.history_df["atmCity"].dropna().unique().tolist())
+        raw_names = self.history_df["atmName"].dropna().unique()
+        banks = sorted(list(set(name.split(" ATM -")[0] for name in raw_names if " ATM -" in name)))
+        return {
+            "cities": cities,
+            "banks": banks
+        }
+
+
     def _recent_history(self, atm_id, rows=48):
         atm_history = self.history_df[self.history_df["atmId"] == atm_id].tail(rows)
         if atm_history.empty:

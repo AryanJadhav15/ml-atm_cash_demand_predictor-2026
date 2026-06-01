@@ -15,6 +15,11 @@ export async function getAtms() {
   return data;
 }
 
+export async function getAtmFilters() {
+  const { data } = await api.get("/atms/filters");
+  return data;
+}
+
 export async function getAtmForecast(atmId) {
   const { data } = await api.get(`/atm/${atmId}/forecast`);
   return data;

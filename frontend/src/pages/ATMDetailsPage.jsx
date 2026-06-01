@@ -28,7 +28,7 @@ export default function ATMDetailsPage() {
 
   if (error) {
     return (
-      <div className="rounded-lg border border-red-400/20 bg-red-500/10 p-5 text-red-100">
+      <div className="rounded-lg border border-danger/20 bg-danger/10 p-5 text-danger">
         {error}
       </div>
     );
@@ -61,7 +61,7 @@ export default function ATMDetailsPage() {
         <SummaryCard label="Threshold" value={formatCash(data.low_balance_threshold)} tone="yellow" />
       </div>
 
-      <section className="rounded-lg border border-white/10 bg-panel p-5 shadow-glow">
+      <section className="rounded-lg border border-border bg-panel p-5 shadow-glow">
         <div className="grid gap-4 md:grid-cols-3">
           <div>
             <p className="text-sm text-muted">Estimated depletion</p>
@@ -85,11 +85,11 @@ export default function ATMDetailsPage() {
         <WithdrawalBarChart forecast={data.forecast} />
       </div>
 
-      <section className="rounded-lg border border-white/10 bg-panel p-5 shadow-glow">
+      <section className="rounded-lg border border-border bg-panel p-5 shadow-glow">
         <h2 className="text-lg font-semibold">Depletion Timeline</h2>
         <div className="mt-5 max-h-96 overflow-auto">
-          <table className="min-w-full divide-y divide-white/10">
-            <thead className="bg-white/5">
+          <table className="min-w-full divide-y divide-border">
+            <thead className="bg-hover">
               <tr>
                 <th className="px-4 py-3 text-left text-xs uppercase text-muted">Hour</th>
                 <th className="px-4 py-3 text-left text-xs uppercase text-muted">Time</th>
@@ -97,7 +97,7 @@ export default function ATMDetailsPage() {
                 <th className="px-4 py-3 text-left text-xs uppercase text-muted">Balance</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-white/8">
+            <tbody className="divide-y divide-border">
               {data.forecast.map((point) => (
                 <tr key={point.hour}>
                   <td className="px-4 py-3 text-sm">{point.hour}</td>

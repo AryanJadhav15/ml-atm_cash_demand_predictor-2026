@@ -46,13 +46,13 @@ export default function DashboardPage() {
 
   if (error && !data) {
     return (
-      <div className="rounded-lg border border-red-400/20 bg-red-500/10 p-6 text-red-100 shadow-glow">
+      <div className="rounded-lg border border-danger/20 bg-danger/10 p-6 text-danger shadow-glow">
         <h2 className="text-xl font-semibold">Backend connection failed</h2>
-        <p className="mt-2 text-sm text-red-100/80">
+        <p className="mt-2 text-sm text-danger/80">
           The dashboard loaded, but it could not reach the FastAPI server. Start the
           backend on port 8000, then refresh this page.
         </p>
-        <pre className="mt-4 overflow-auto rounded-lg bg-black/30 p-4 text-sm text-red-50">
+        <pre className="mt-4 overflow-auto rounded-lg bg-surface p-4 text-sm text-danger">
 {`cd "/Users/aryan/Computer Science/Projects/ATM Cash Demand Predictor/backend"
 source .venv/bin/activate
 python run.py`}
@@ -64,7 +64,7 @@ python run.py`}
   return (
     <div className="space-y-6">
       {error && (
-        <div className="rounded-lg border border-red-400/20 bg-red-500/10 p-4 text-red-100">
+        <div className="rounded-lg border border-danger/20 bg-danger/10 p-4 text-danger">
           {error}
         </div>
       )}
@@ -79,7 +79,7 @@ python run.py`}
         <SummaryCard label="Safe" value={data?.safe_atms || 0} tone="green" />
       </div>
 
-      <section className="rounded-lg border border-white/10 bg-panel p-5 shadow-glow">
+      <section className="rounded-lg border border-border bg-panel p-5 shadow-glow">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <h2 className="text-lg font-semibold">Priority Ranking</h2>
           <Link to="/atms" className="text-sm font-semibold text-accent">
@@ -91,7 +91,7 @@ python run.py`}
             <Link
               key={atm.atmId}
               to={`/atms/${atm.atmId}`}
-              className="rounded-lg border border-white/10 bg-white/5 p-4 transition hover:border-accent/40"
+              className="rounded-lg border border-border bg-hover p-4 transition hover:border-accent/40"
             >
               <div className="flex items-center justify-between gap-3">
                 <p className="truncate font-semibold">{atm.atmId}</p>

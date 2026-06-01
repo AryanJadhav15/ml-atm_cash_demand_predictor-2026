@@ -1,6 +1,7 @@
 from fastapi import APIRouter, HTTPException
 
 from app.schemas.prediction import (
+    ATMFiltersResponse,
     ATMListResponse,
     HealthResponse,
     PredictionRequest,
@@ -34,6 +35,11 @@ def predict_atm_depletion(payload: PredictionRequest):
 @router.get("/atms", response_model=ATMListResponse)
 def get_atm_statuses():
     return get_atm_service().get_all_atm_statuses()
+
+
+@router.get("/atms/filters", response_model=ATMFiltersResponse)
+def get_atm_filters():
+    return get_atm_service().get_filters()
 
 
 @router.get("/atm/{atm_id}/forecast", response_model=PredictionResponse)

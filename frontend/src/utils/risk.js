@@ -1,8 +1,8 @@
 export const riskStyles = {
-  CRITICAL: "bg-red-500/15 text-red-300 ring-red-400/30",
-  HIGH: "bg-orange-500/15 text-orange-300 ring-orange-400/30",
-  MEDIUM: "bg-yellow-500/15 text-yellow-200 ring-yellow-400/30",
-  LOW: "bg-emerald-500/15 text-emerald-300 ring-emerald-400/30",
+  CRITICAL: "bg-danger/15 text-danger ring-danger/30",
+  HIGH: "bg-orange-500/15 text-orange-500 ring-orange-500/30",
+  MEDIUM: "bg-warning/15 text-warning ring-warning/30",
+  LOW: "bg-success/15 text-success ring-success/30",
 };
 
 export const riskOrder = {

@@ -4,10 +4,10 @@ import { formatCash, formatHours } from "../utils/risk.js";
 
 export default function ATMStatusTable({ atms }) {
   return (
-    <div className="overflow-hidden rounded-lg border border-white/10 bg-panel shadow-glow">
-      <div className="overflow-x-auto">
-        <table className="min-w-full divide-y divide-white/10">
-          <thead className="bg-white/5">
+    <div className="overflow-hidden rounded-lg border border-border bg-panel shadow-glow">
+      <div className="max-h-screen overflow-auto">
+        <table className="min-w-full divide-y divide-border">
+          <thead className="sticky top-0 z-10 bg-panel">
             <tr>
               <th className="px-5 py-4 text-left text-xs font-semibold uppercase tracking-wide text-muted">
                 ATM
@@ -29,11 +29,11 @@ export default function ATMStatusTable({ atms }) {
               </th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-white/8">
+          <tbody className="divide-y divide-border">
             {atms.map((atm) => (
-              <tr key={atm.atmId} className="transition hover:bg-white/5">
+              <tr key={atm.atmId} className="transition hover:bg-hover">
                 <td className="px-5 py-4">
-                  <Link to={`/atms/${atm.atmId}`} className="font-semibold text-ink hover:text-accent">
+                  <Link to={`/atms/${atm.atmId}`} className="font-semibold text-text hover:text-accent">
                     {atm.atmId}
                   </Link>
                   <p className="mt-1 max-w-xs truncate text-xs text-muted">{atm.atmName}</p>

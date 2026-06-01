@@ -57,3 +57,9 @@ class HealthResponse(BaseModel):
     model_loaded: bool
     preprocessor_loaded: bool
     history_loaded: bool
+
+
+class ATMFiltersResponse(BaseModel):
+    cities: list[str]
+    banks: list[str]
+
